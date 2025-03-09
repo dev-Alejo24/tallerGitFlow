@@ -97,6 +97,7 @@ export default function Timer() {
             </button>
           </div>
         </div>
+        //pull request de feature button-stop
       ) : (
         <div
           className={`flex flex-col items-center ${

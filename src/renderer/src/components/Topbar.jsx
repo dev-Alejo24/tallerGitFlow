@@ -23,7 +23,7 @@ export const Topbar = () => {
           &#128469; {/* Icono de minimizar */}
         </button>
         <button id="increase-size" className="px-1" style={{ fontSize: '18px' }} onClick={handleIncreaseSize}>
-          ⛶ {/* Icono de aumentar tamaño */}
+          &#9634; {/* Icono de maximizar (☐) */}
         </button>
         <button id="close" className="px-1" style={{ fontSize: '18px' }} onClick={handleClose}>
           &#10006; {/* Icono de cerrar */}

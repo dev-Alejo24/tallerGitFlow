@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { FaPause, FaPlay, FaStop, FaRedo } from 'react-icons/fa';
+import { FaPause, FaPlay, FaStop, FaRedo, FaEdit } from 'react-icons/fa';
 import InputField from './InputField';
 
 export default function Timer() {
@@ -67,7 +66,13 @@ export default function Timer() {
     setHours(0);
     setMinutes(0);
     setSeconds(0);
-    setIsEditing(true); // Permite volver a editar el tiempo
+    setIsEditing(true);
+  };
+
+  const handleEdit = () => {
+    setIsEditing(true);
+    setIsRunning(false);
+    setIsPaused(false);
   };
 
   return (
@@ -91,14 +96,13 @@ export default function Timer() {
               onChange={(e) => setSeconds(parseInt(e.target.value) || 0)}
             />
             <button
-              className="bg-blue-500 text-white px-8 py-2 rounded-xl"
+              className="bg-blue-500 text-white px-8 py-2 rounded-xl mt-2"
               onClick={handleStart}
             >
               <FaPlay className="text-2xl" />
             </button>
           </div>
         </div>
-        //pull request de feature button-stop
       ) : (
         <div
           className={`flex flex-col items-center ${
@@ -141,6 +145,12 @@ export default function Timer() {
               <FaStop className="text-2xl" />
             </button>
           </div>
+          <button
+            onClick={handleEdit}
+            className="bg-gray-500 text-white px-6 py-2 rounded mt-2"
+          >
+            <FaEdit className="text-2xl" /> 
+          </button>
         </div>
       )}
     </div>
